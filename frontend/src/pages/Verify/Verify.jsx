@@ -15,6 +15,7 @@ function Verify(){
     const navigate = useNavigate();
 
     const verifyPayment = async() => {
+         try {
     const response = await axios.post(url+"/api/order/verify",{orderId,success});
 
     if(response.data.success){
@@ -23,11 +24,16 @@ function Verify(){
     else{
         navigate("/")
     }
+     } catch (error) {
+    console.log(error);
+    navigate("/");
+ }
+
     }
 
     useEffect(()=>{
         verifyPayment();
-    },[])
+    },[orderId,success])
         
     
     return(
