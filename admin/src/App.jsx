@@ -6,10 +6,11 @@ import List from "./Pages/List/List"
 import Orders from "./Pages/Orders/Orders"
 import { ToastContainer} from 'react-toastify';
 import Dashboard from "./Pages/Dashboard/Dashboard"
+import { url } from "./assets/assets"
 
 function App() {
 
-  const url = "http://localhost:4000"
+  // const url = "http://localhost:4000"
 
   return (
     <>
