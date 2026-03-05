@@ -6,7 +6,7 @@ import upload_area from './upload_area.png'
 import parcel_icon from './parcel_icon.png'
 import dashboard from './dashboard.png'
 
-export const url = 'https://food-delivery-app-tg69.onrender.com'
+export const url = 'https://food-delivery-app-backend-gqm6.onrender.com'
 
 export const assets ={
     logo,
