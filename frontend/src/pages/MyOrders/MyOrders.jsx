@@ -5,6 +5,7 @@ import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
 import { useEffect } from "react";
 import { assets } from "../../assets/assets";
+import { toast } from "react-toastify";
 
 function MyOrders() {
     const {url,token} = useContext(StoreContext)
@@ -18,6 +19,7 @@ function MyOrders() {
         
     } catch(error){
         console.log(error);
+        toast.error("Failed to fetch orders")
     }
 }
 
@@ -49,7 +51,10 @@ function MyOrders() {
                                 <p>${order.amount}.00</p>
                                 <p>Items : {order.items.length}</p>
                                 <p><span>   &#x25cf;</span> <b>{order.status}</b></p>
-                                <button onClick={fetchOrders}>Track Order</button>
+                                <button onClick={()=>{
+    fetchOrders()
+    toast.success("Order status updated")
+}}>Track Order</button>
                                 
                             </div>
                         )
