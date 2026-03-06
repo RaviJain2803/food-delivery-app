@@ -8,6 +8,7 @@ import { useState } from "react"
 import LoginPopup from "./components/LoginPopup/LoginPopup"
 import Verify from "./pages/Verify/Verify"
 import MyOrders from "./pages/MyOrders/MyOrders"
+import { ToastContainer } from "react-toastify"
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
     <div className="app">
       
       <Navbar setShowLogin={setShowLogin} />
+      <ToastContainer/>
 
       <Routes>
         <Route path="/" element={<Home/>} > </Route>
